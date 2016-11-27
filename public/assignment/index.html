@@ -3,29 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="..css/style.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
     <script src="app.js"></script>
+    <script src="config.js"></script>
+    <script src="views/user/login.controller.client.js"></script>
     <title>Assignment Home Page</title>
 </head>
 <body>
-    <h1>Assignment Home Page</h1>
 
-    <h2>Required links</h2>
-    <ul>
-        <li>
-            <a href="project/index.html">Project</a>
-        </li>
-        <li>
-            <a href="views/user/login.view.client.html">Assignment</a>
-        </li>
-        <li>
-            <a href="test/index.html">Test MongoDB</a>
-        </li>
-        <li>
-            <a href="https://github.com/jkels86/ellis-jake-webdev">My public repository at GitHub.com</a>
-        </li>
-    </ul>
+    <div ng-view>
+    </div>
+
 </body>
 </html>
