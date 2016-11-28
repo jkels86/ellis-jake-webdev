@@ -3,16 +3,17 @@
         <div class="navbar-header">
             <a class="navbar-brand pull-left" href="#">Profile</a>
             <p class="navbar-text pull-right">
-                <a href="#/profile" class="glyphicon glyphicon-ok pull-right"></a>
+                <a href="#/user/:uid" class="glyphicon glyphicon-ok pull-right"></a>
             </p>
         </div>
     </div>
 </nav>
+
 <div class="container-fluid">
     <form>
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" placeholder="Alice">
+            <input ng-model = "model.user.username" type="text" class="form-control" id="username" placeholder="Alice">
         </div>
         <div class="form-group">
             <label for="email">Email</label>
@@ -20,20 +21,20 @@
         </div>
         <div class="form-group">
             <label for="first">First Name</label>
-            <input type="text" class="form-control" id="first" placeholder="Alice">
+            <input ng-model = "model.user.first" type="text" class="form-control" id="first" placeholder="Alice">
         </div>
         <div class="form-group">
             <label for="last">Last Name</label>
-            <input type="text" class="form-control" id="last" placeholder="Wonderland">
+            <input ng-model= "model.user.last" type="text" class="form-control" id="last" placeholder="Wonderland">
         </div>
-        <a href="#/website" class="btn btn-primary btn-block">Websites</a>
+        <a href="#/user/{{model.user._id}}/website" class="btn btn-primary btn-block">Websites</a>
         <a href="#/login" class="btn btn-danger btn-block">Logout</a>
     </form>
 </div>
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <p class="navbar-text pull-right">
-            <a href="#/profile" class="glyphicon glyphicon-user"></a>
+            <a href="#/user/:uid" class="glyphicon glyphicon-user"></a>
         </p>
     </div>
 </nav>
