@@ -35,12 +35,11 @@
 
         function findUserById(userId) {
             for (var u in users) {
-                var user = users[u];
-                if (user._id === userId) {
-                    return user;
+                var currentuser = users[u];
+                if (currentuser._id === userId) {
+                    currentuser = user;
                 }
             }
-            return null;
         }
 
         function findUserByCredentials(username, password) {

@@ -1,6 +1,4 @@
-/**
- * Created by Jkels on 11/27/16.
- */
+
 (function(){
     angular
         .module("WebAppMaker")
@@ -11,10 +9,13 @@
 
         var userId = parseInt($routeParams.uid);
 
-        var user = UserService.findUserById(userId);
+        function init(){
+            user = UserService.findUserById(userId);
 
-        if(user != null) {
-            vm.user = user;
+            if(user != null) {
+                vm.user = user;
+            }
         }
+        init;
     }
 })();

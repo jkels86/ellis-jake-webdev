@@ -16,7 +16,7 @@
 
         var api = {
             createWebsite: createWebsite,
-            findWebsitesForUser: findWebsitesForUser,
+            findWebsitesByUser: findWebsitesByUser,
             findWebsiteById: findWebsiteById,
             updateWebsite: updateWebsite,
             deleteWebsite: deleteWebsite
@@ -30,19 +30,19 @@
             websites.push(website);
         }
 
-        function findWebsiteById(wid) {
+        function findWebsiteById(websiteId) {
             for(var w in websites) {
-                if(websites[w]._id === wid) {
+                if(websites[w]._id === websiteId) {
                     return websites[w];
                 }
             }
             return null;
         }
 
-        function findWebsitesForUser(uid) {
+        function findWebsitesByUser(userId) {
             var result = [];
             for(var w in websites) {
-                if(websites[w].uid === uid) {
+                if(websites[w].userId === userId) {
                     result.push(websites[w]);
                 }
             }

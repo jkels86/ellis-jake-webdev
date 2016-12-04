@@ -2,11 +2,11 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <p class="navbar-text pull-left">
-                <a href="#/user/:uid/website/:wid/page" class="glyphicon glyphicon-chevron-left"></a>
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page" class="glyphicon glyphicon-chevron-left"></a>
             </p>
             <a class="navbar-brand" href="#">Edit Page</a>
             <p class="navbar-text pull-right">
-                <a href="#/user/:uid/website/:wid/page" class="glyphicon glyphicon-ok"></a>
+                <a ng-click="model.updatepage(model.page.name, model.page.description)" class="glyphicon glyphicon-ok"></a>
             </p>
         </div>
     </div>
@@ -15,19 +15,19 @@
     <form>
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Blog Post">
+            <input ng-model= "model.user.name" type="text" class="form-control" id="name" placeholder="Blog Post">
         </div>
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" placeholder="Page Title"></input>
+            <input ng-model= "model.user.title" type="text" class="form-control" id="title" placeholder="Page Title"></input>
         </div>
-        <a href="#/user/:uid/website/:wid/page" class="btn btn-danger btn-block">Delete</a>
+        <a ng-click="model.deletepage(model.pageId)" class="btn btn-danger btn-block">Delete</a>
     </form>
 </div>
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <p class="navbar-text pull-right">
-            <a href="#/user/:uid" class="glyphicon glyphicon-user"></a>
+            <a href="#/user/{{model.userId}}" class="glyphicon glyphicon-user"></a>
         </p>
     </div>
 </nav>
