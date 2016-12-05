@@ -6,10 +6,11 @@
     function PageListController($routeParams, PageService){
         var vm = this;
 
-        var websiteId = parseInt($routeParams['wid']);
-
         function init() {
-            vm.pages = PageService.findPagesByWebsiteId(websiteId);
+            vm.userId = $routeParams['uid'];
+            vm.websiteId = $routeParams['wid'];
+            vm.pageId = $routeParams['pid'];
+            vm.pages = PageService.findPageByWebsiteId(vm.websiteId);
         }
         init();
     }

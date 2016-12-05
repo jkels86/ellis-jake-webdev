@@ -14,17 +14,8 @@
 
 <div class="container-fluid">
     <div class="form-class">
-        <div ng-switch="widget.widgetType">
-            <div ng-switch-when="HEADER">
-                <ng-include src="'widget-heading.view.client.html'"></ng-include>
-            </div>
-            <div ng-switch-when="IMAGE">
-                <ng-include src="'widget-image.view.client.html'"></ng-include>
-            </div>
-            <div ng-switch-when="YOUTUBE">
-                <ng-include src="'widget-youtube.view.client.html'"></ng-include>
-            </div>
-        <a class="btn btn-danger btn-block">Delete</a>
+        <div ng-if='widget.widgetType'>
+            <div ng-include="views/widget/widget-'+{{widgetType}}+'.view.client.html"></div>
         </div>
     </div>
 </div>

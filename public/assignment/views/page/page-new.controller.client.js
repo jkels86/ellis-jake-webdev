@@ -6,19 +6,20 @@
     function PageNewController($location, $routeParams, PageService){
         var vm = this;
 
-        var userId = parseInt($routeParams.uid);
-        var websiteId = parseInt($routeParams.wid);
+        vm.userId = $routeParams['uid'];
+        vm.websiteId = $routeParams['wid'];
 
         function init(){
-            vm.pages = PageService.findPageByWebsiteId(websiteId);
+            vm.pages = PageService.findPageByWebsiteId(vm.websiteId);
             vm.createpage = createpage;
         }
-
-        init();
 
         function createpage(name, description){
             newpage = PageService.createpage(websiteId, name, description);
             $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page")
         }
+
+        init();
+
     }
 })();

@@ -12,21 +12,15 @@
     </div>
 </nav>
 <div class="container-fluid">
-
-    {{model.websites}}
-
-    <form>
         <ul class="list-group">
             <li ng-repeat= "website in model.websites" class="list-group-item">
-               <a href="#/user/{{model.userId}}/website/{{website._id}}/page">
-                {{website.name}}
+               <a href="#/user/{{model.userId}}/website/{{website._id}}/page">{{website.name}}
                </a>
                 <a href="#/user/{{model.userId}}/website/{{website._id}}" class="pull-right">
                     <span class="glyphicon glyphicon-cog"></span>
                 </a>
             </li>
         </ul>
-    </form>
 </div>
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">

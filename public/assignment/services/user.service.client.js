@@ -23,10 +23,10 @@
 
         function createUser(user) {
             var userId = parseInt(Math.floor(Math.random() * 999));
-            if(findUserByUsername(user.username)) {
+            if(findUserByUsername(users.username)) {
                 console.log("Please choose another username");
             } else {
-                user._id = userId;
+                users._id = userId;
                 users.push(user);
                 console.log("User successfully added")
                 return user;
@@ -37,7 +37,7 @@
             for (var u in users) {
                 var currentuser = users[u];
                 if (currentuser._id === userId) {
-                    currentuser = user;
+                    return currentuser;
                 }
             }
         }
@@ -55,7 +55,7 @@
 
         function findUserByUsername(username) {
             for(var u in users) {
-                user = user[u];
+                user = users[u];
                 if(user.username === username) {
                     return user;
                 }

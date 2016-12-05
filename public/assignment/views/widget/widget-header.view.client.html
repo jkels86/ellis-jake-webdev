@@ -1,3 +1,16 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <p class="navbar-text pull-left">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" class="glyphicon glyphicon-chevron-left"></a>
+            </p>
+            <a class="navbar-brand" href="#">Widget Edit</a>
+            <p class="navbar-text pull-right">
+                <a ng-click="model.updatewidget(model.widget)" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" class="glyphicon glyphicon-ok"></a>
+            </p>
+        </div>
+    </div>
+</nav>
 
 <div class="container-fluid">
     <form>
@@ -17,3 +30,10 @@
     </form>
 </div>
 
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <p class="navbar-text pull-right">
+            <a href="#/user/{{model.userId}}" class="glyphicon glyphicon-user"></a>
+        </p>
+    </div>
+</nav>

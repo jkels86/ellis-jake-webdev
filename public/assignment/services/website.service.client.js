@@ -25,8 +25,8 @@
 
         function createWebsite(userId, website) {
             var websiteId = parseInt(Math.floor(Math.random() * 999));
-            website._id = websiteId;
-            website.developerId = userId;
+            websites._id = websiteId;
+            websites.developerId = userId;
             websites.push(website);
         }
 
@@ -40,13 +40,13 @@
         }
 
         function findWebsitesByUser(userId) {
-            var result = [];
+            var userwebsites = [];
             for(var w in websites) {
-                if(websites[w].userId === userId) {
-                    result.push(websites[w]);
+                if(websites[w].developerId === userId) {
+                    userwebsites.push(websites[w]);
                 }
             }
-            return result;
+            return userwebsites;
         }
 
         function updateWebsite(websiteId, website) {

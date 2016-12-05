@@ -22,8 +22,8 @@
 
         function createPage(websiteId, page) {
             var pageId = parseInt(Math.floor(Math.random() * 999));
-            page._id = pageId;
-            page.websiteId = websiteId;
+            pages._id = pageId;
+            pages.websiteId = websiteId;
             pages.push(page);
         }
 
